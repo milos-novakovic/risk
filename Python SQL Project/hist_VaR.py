@@ -65,9 +65,9 @@ def hist_VaR(position,
         pos_bl = pos_bl[['metal', 'exchange', 'maturity', 'sign_volume']].groupby(['metal', 'exchange', 'maturity']).sum().reset_index()
 
         # create a unique id for the 3d tuple
-        pos_bl['id'] =  pos['metal'].astype(str).str.strip()  + '->' + \
-                        pos['exchange'].astype(str).str.strip()  + '->' + \
-                        pos['maturity'].astype(str).str.strip()
+        pos_bl['id'] =  pos_bl['metal'].astype(str).str.strip()  + '->' + \
+                        pos_bl['exchange'].astype(str).str.strip()  + '->' + \
+                        pos_bl['maturity'].astype(str).str.strip()
 
         # keep only the id and signed volume (position)
         pos_bl = pos_bl[['id', 'sign_volume']]
